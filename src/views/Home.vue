@@ -44,5 +44,20 @@ export default {
   height: 100%;
   border: 1px solid black;
   cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+}
+
+.nameBox__name {
+  font-size: 144px;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: -95px;
+
+  color: black;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  margin-top: 25%;
 }
 </style>
