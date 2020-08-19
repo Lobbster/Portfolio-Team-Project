@@ -2,8 +2,7 @@
   <div>
     <section>
       <h1>{{ portfolio.name }}'s project</h1>
-      <h1>{{ projectSlug }}</h1>
-      <h1>{{ findProject }}</h1>
+      <h1>{{ findProject.name }}</h1>
     </section>
   </div>
 </template>
