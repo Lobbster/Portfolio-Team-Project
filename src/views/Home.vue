@@ -4,12 +4,12 @@
       <div v-for="portfolio in portfolios" :key="portfolio.name">
         <router-link
           :to="{
-              name: `PortfolioTemplate`,
-              params:{slug:portfolio.slug}
+            name: `PortfolioTemplate`,
+            params: { slug: portfolio.slug }
           }"
         >
           <div class="nameBox">
-            <h1 class="nameBox__name">{{portfolio.name}}</h1>
+            <h1 class="nameBox__name">{{ portfolio.name }}</h1>
           </div>
         </router-link>
       </div>
@@ -31,7 +31,7 @@ export default {
 };
 </script>
 
-<style  scoped>
+<style scoped>
 .linkContainer {
   width: 100%;
   height: 100vh;

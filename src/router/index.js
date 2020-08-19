@@ -9,25 +9,25 @@ const routes = [
     path: "/",
     name: "Home",
     component: Home,
-    props: true,
+    props: true
   },
   {
     path: "/portfolio/:slug",
     name: "PortfolioTemplate",
     component: () => import("../views/PortfolioTemplate"),
-    props: true,
+    props: true
   },
   {
     path: "/:slug/:projectSlug",
     name: "ProjectTemplate",
     component: () => import("../views/ProjectTemplate"),
-    props: true,
-  },
+    props: true
+  }
 ];
 
 const router = new VueRouter({
   mode: "history",
-  routes,
+  routes
 });
 
 export default router;

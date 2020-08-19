@@ -14,7 +14,8 @@ export default {
     TheNavigation
   }
 };
-</script>>
+</script>
+>
 
 <style>
 * {

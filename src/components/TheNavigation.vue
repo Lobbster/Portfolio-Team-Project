@@ -1,14 +1,15 @@
 <template>
-  <nav id="nav">
+  <nav id="nav" v-show="checkRoute">
     <router-link to="/">STV</router-link>
     <ul class="nav-links">
       <li v-for="portfolio in portfolios" :key="portfolio.name" class="links">
         <router-link
           :to="{
-              name: `PortfolioTemplate`,
-              params:{slug:portfolio.slug}
+            name: `PortfolioTemplate`,
+            params: { slug: portfolio.slug }
           }"
-        >{{portfolio.name}}</router-link>
+          >{{ portfolio.name }}</router-link
+        >
       </li>
     </ul>
   </nav>
@@ -21,6 +22,15 @@ export default {
     return {
       portfolios: store.portfolios
     };
+  },
+  computed: {
+    checkRoute() {
+      if (this.$route.path == `/`) {
+        return false;
+      } else {
+        return true;
+      }
+    }
   }
 };
 </script>

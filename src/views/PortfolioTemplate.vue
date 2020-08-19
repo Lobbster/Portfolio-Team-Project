@@ -1,18 +1,22 @@
 <template>
   <div>
     <section class="portfolio">
-      <h1>{{portfolio.name}}</h1>
+      <h1>{{ portfolio.name }}</h1>
     </section>
     <section>
       <div class="cards">
-        <div v-for="project in portfolio.projects" :key="project.slug" class="card">
+        <div
+          v-for="project in portfolio.projects"
+          :key="project.slug"
+          class="card"
+        >
           <router-link
             :to="{
               name: `ProjectTemplate`,
-              params:{projectSlug: project.slug}
-          }"
+              params: { projectSlug: project.slug }
+            }"
           >
-            <p>{{project.name}}</p>
+            <p>{{ project.name }}</p>
           </router-link>
         </div>
       </div>
@@ -49,4 +53,3 @@ export default {
   cursor: pointer;
 }
 </style>
-
