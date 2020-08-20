@@ -1,7 +1,11 @@
 <template>
   <div class="home">
     <div class="linkContainer">
-      <div v-for="portfolio in portfolios" :key="portfolio.name" class="nameBox">
+      <div
+        v-for="portfolio in portfolios"
+        :key="portfolio.name"
+        class="nameBox"
+      >
         <router-link
           :to="{
             name: `PortfolioTemplate`,

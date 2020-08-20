@@ -10,7 +10,8 @@
             name: `PortfolioTemplate`,
             params: { slug: portfolio.slug }
           }"
-        >{{ portfolio.name }}</router-link>
+          >{{ portfolio.name }}</router-link
+        >
       </li>
     </ul>
   </nav>
