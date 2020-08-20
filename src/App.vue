@@ -29,6 +29,13 @@ export default {
 a {
   text-decoration: none;
 }
+a:active {
+  color: none;
+}
+a:visited {
+  text-decoration: none;
+}
+
 li {
   list-style-type: none;
 }

@@ -1,6 +1,8 @@
 <template>
   <nav id="nav" v-show="checkRoute">
-    <router-link to="/">STV</router-link>
+    <router-link to="/">
+      <img src="@/assets/logo.png/" alt="stv logo" class="logo" />
+    </router-link>
     <ul class="nav-links">
       <li v-for="portfolio in portfolios" :key="portfolio.name" class="links">
         <router-link
@@ -8,8 +10,7 @@
             name: `PortfolioTemplate`,
             params: { slug: portfolio.slug }
           }"
-          >{{ portfolio.name }}</router-link
-        >
+        >{{ portfolio.name }}</router-link>
       </li>
     </ul>
   </nav>
@@ -36,7 +37,14 @@ export default {
 </script>
 
 <style scope>
+.logo {
+  width: 175px;
+  height: 175px;
+}
 nav {
+  height: 58px;
+  margin: 80px;
+  margin-bottom: 120px;
   display: flex;
   justify-content: space-between;
 }
@@ -44,5 +52,10 @@ ul {
   width: 500px;
   display: flex;
   justify-content: space-between;
+}
+li {
+  font-size: 48px;
+  font-weight: 300;
+  color: grey;
 }
 </style>
