@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button v-on:click="updateShowModal()">contact</button>
+    <button @click="updateShowModal()">contact</button>
   </div>
 </template>
 
@@ -10,7 +10,7 @@ export default {
   methods: {
     updateShowModal() {
       console.log("change modal clicked");
-      this.$emit("changeModal", "I am chaning the modal");
+      this.$emit("changeModal");
     }
   }
 };

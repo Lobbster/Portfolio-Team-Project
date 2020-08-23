@@ -26,6 +26,9 @@ export default {
 #app {
   font-family: "Open Sans", sans-serif;
 }
+body {
+  overflow-x: hidden;
+}
 a {
   text-decoration: none;
 }

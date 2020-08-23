@@ -2,16 +2,17 @@
   <div>
     <!-- Button -->
     <ContactButton v-on:changeModal="showModal = true" />
-    <transition name="fade" appear>
+    <transition name="fade">
       <div
         class="modal-overlay"
+        appear
         v-if="showModal"
         @click="showModal = false"
       ></div>
     </transition>
     <!-- Contact -->
     <transition name="slide" appear v-if="showModal">
-      <Contact />
+      <Contact v-bind:portfolio="portfolio" />
     </transition>
 
     <!-- skills -->

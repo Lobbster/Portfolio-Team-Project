@@ -1,9 +1,15 @@
 <template>
-  <div class="modal"></div>
+  <div class="modal">
+    <h1>{{ portfolio.name }}</h1>
+  </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    portfolio: { type: String, required: true }
+  }
+};
 </script>
 
 <style>
@@ -16,7 +22,6 @@ export default {};
   width: 700px;
   height: 300px;
   background-color: white;
-  overflow: hidden;
   border: 1px solid black;
 }
 

@@ -5,6 +5,10 @@ export default {
       id: 1,
       slug: "tom",
       skills: ["graphic", "ux/ui", "web"],
+      contact: {
+        name: "Thomas Hendrikz",
+        phone: "1233456789"
+      },
       projects: [
         { name: "The Cake Project", slug: "TheCakeProject", detail: "12345" },
         { name: "Travle the world", slug: "Awsome", detail: "12345" },
