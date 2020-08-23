@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- Button -->
-    <button @click="showModal = true">contact</button>
+    <ContactButton v-on:changeModal="showModal = true" />
     <transition name="fade" appear>
       <div
         class="modal-overlay"
@@ -10,11 +10,10 @@
       ></div>
     </transition>
     <!-- Contact -->
-    <transition name="slide" appear>
-      <div class="modal" v-if="showModal">
-        <button @click="showModal = false">close</button>
-      </div>
+    <transition name="slide" appear v-if="showModal">
+      <Contact />
     </transition>
+
     <!-- skills -->
     <section>
       <div class="skil-container">
@@ -77,7 +76,14 @@
 
 <script>
 import store from "@/store.js";
+import Contact from "@/components/Contact";
+import ContactButton from "@/components/ContactButton";
+
 export default {
+  components: {
+    Contact,
+    ContactButton
+  },
   data() {
     return {
       showModal: false
@@ -89,6 +95,7 @@ export default {
       required: true
     }
   },
+
   computed: {
     portfolio() {
       return store.portfolios.find(portfolio => portfolio.slug === this.slug);
@@ -99,25 +106,6 @@ export default {
 
 //
 <style scoped>
-/* Contact */
-button {
-  appearance: none;
-  outline: none;
-  border: none;
-  background: none;
-  cursor: pointer;
-  display: inline;
-  padding: 25px;
-  border-radius: 50px;
-  background-color: red;
-  box-shadow: 3px 3px rgba(0, 0, 0, 0.4);
-  transition: 0.4s ease-out;
-}
-
-button:hover {
-  box-shadow: 6px 6px rgba(0, 0, 0, 0.6);
-}
-
 .modal-overlay {
   position: absolute;
   top: 0;
@@ -128,18 +116,6 @@ button:hover {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
-.modal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 99;
-  width: 700px;
-  height: 300px;
-  background-color: white;
-  overflow: hidden;
-}
-
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s;
@@ -148,16 +124,6 @@ button:hover {
 .fade-enter,
 .fade-leave-to {
   opacity: 0;
-}
-
-.slide-enter-active,
-.slide-leave-active {
-  transition: transform 0.5s;
-}
-
-.slide-enter,
-.slide-leave-to {
-  transform: translateY(-50%) translateX(100vw);
 }
 
 /*  Skill box */
